@@ -1,1 +1,0 @@
-# krutyy.github.io
