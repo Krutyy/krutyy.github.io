@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var result="";
+        var widthBoard = 10;
+        var heightBoard = 10;
+        for (var i=1;i<=heightBoard;i++) {
+            for(var j=1;j<=widthBoard;j++) {
+                if(i%2!=0) {
+                    result = result + "# ";
+                } else {
+                    result = result + " #";
+                }
+            }
+            result=result+"\n";
+            console.log(result);
+            result="";
+        }
+    </script>
+</body>
+</html>
