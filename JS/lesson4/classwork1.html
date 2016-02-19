@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function sumTo(n) {
+            if(n!=1) {
+                return n + sumTo(n - 1);
+            }
+            return n;
+        }
+
+        function sumTo1(n) {
+           var result=0;
+            for (var i=0;i<=n;i++) {
+                 result = result+i;
+
+           }
+            return result;
+        }
+
+        function sumTo2(n) {
+            var sum = (n+1)/2*n;
+            return sum;
+        }
+
+
+       alert( sumTo(5));
+        alert( sumTo1(5));
+        alert( sumTo2(5));
+    </script>
+</body>
+</html>

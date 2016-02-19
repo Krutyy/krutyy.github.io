@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function strSlice(str) {
+            var result='';
+            if(str.length<=20) {
+                return str;
+            }else {
+               result+=str.slice(0,20)+'...';
+                return result;
+            }
+        }
+        alert(strSlice("Необязательный. Индекс конца указанного фрагмента строки"))
+    </script>
+</body>
+</html>

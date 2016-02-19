@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function upperFirst(str) {
+            var char = str.charAt(0).toUpperCase();
+            var result=char;
+            for (var i=1;i<str.length;i++) {
+                result=result+str[i];
+            }
+            return result;
+        }
+        alert(upperFirst(""));
+    </script>
+</body>
+</html>
