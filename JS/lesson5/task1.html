@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+
+
+
+        function maxTask(obj) {
+            var max=0;
+            var maxName='';
+            for (var item in obj) {
+                if(max<obj[item]) {
+                    max=obj[item];
+                    maxName=item;
+                }
+            }
+            return maxName;
+        }
+
+
+
+
+
+
+        var tasksCompleted = {
+            'Anna': 100,
+            'Serg': 350,
+            'Elena': 1,
+            'Anton': 99
+        };
+
+       console.log( maxTask(tasksCompleted));
+    </script>
+</body>
+</html>

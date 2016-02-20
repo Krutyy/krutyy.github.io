@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var num=0;
+        var arr=[];
+        var sum=0;
+        function checkEnter(n) {
+            return n === "" || n=== null || isNaN(n) ? false : true;
+        }
+
+        do {
+            num=prompt("Введите значение!","");
+            if(checkEnter(num)) {
+                arr.push(+num);
+            }
+        }while(checkEnter(num));
+
+        for (var i=0;i<arr.length;i++) {
+            sum+=arr[i];
+        }
+        alert(sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function isNumeric(n) {
+            if(!isNaN(n)&&isFinite(n)) {
+                return true;
+            }else {
+                return false;
+            }
+        }
+
+        function multiplyNumeric(obj) {
+           var resObj =  {};
+            for (var item in obj) {
+                resObj[item] = obj[item] ;
+                if(isNumeric(obj[item])) {
+                    resObj[item]= resObj[item]*2;
+                }
+            }
+            return resObj;
+        }
+
+        var image = {
+            width: 100,
+            height: 400,
+            title: 'Cool image'
+        };
+
+       console.log( multiplyNumeric(image));
+    </script>
+</body>
+</html>
