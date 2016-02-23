@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        function isPal(str) {
+
+            var obj={};
+            var resStr='';
+            for (var i = 0;i<str.length;i++) {
+                if(str.charAt(i)!=' ') {
+                    resStr+=str.charAt(i);
+                }
+            }
+            var arr=resStr.toLowerCase().split('');
+            for (i=0,j=arr.length-1;i<arr.length;i++,j--) {
+             obj[arr[i]]=arr[j];
+            }
+//return obj;
+            for(i in obj) {
+                if(obj[i]=== i) {
+                    continue;
+                }else return false;
+            }
+            return true;
+        }
+        console.log(isPal('Abnna')); // true
+      console.log(isPal('А роза упала на лапу Азора')); //tru
+        //console.log(isPal('Васяв')); //false
+       //console.log(isPal('12321')); //true
+      // console.log(isPal('123212')); //false
+    </script>
+
+
+</body>
+</html>

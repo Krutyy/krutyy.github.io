@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function toCamelCase(str) {
+            var words = str.split('-');
+
+            for (var i=1;i<words.length;i++) {
+               words[i] =words[i].charAt(0).toUpperCase()+ words[i].slice(1)
+            }
+            return words.join('');
+        }
+
+       console.log( toCamelCase('background-color')); // 'backgroundColor';
+        console.log(toCamelCase('list-style-image')); // 'listStyleImage';
+       console.log(toCamelCase('-webkit-transition')); // 'WebkitTransition';
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function removeClass(obj,cls) {
+            var arr = obj.className.split(' ')
+            while(arr.indexOf(cls)>=0) {
+                arr.splice(arr.indexOf(cls),1);
+            }
+
+            obj.className=arr.join(' ');
+        }
+
+        var obj = {
+            className: 'open ba'
+        };
+        removeClass(obj,'menu');
+        console.log(obj);
+
+    </script>
+</body>
+</html>;

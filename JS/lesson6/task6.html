@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function uniqueArr(arr) {
+            var value = '';
+            return arr.filter(
+                    function(num,item) {
+                        if(item==0) {
+                            value+=num;
+                            return num;
+                        }else {
+                            if(value.indexOf(num)<0) {
+                                value+=num;
+                                return num;
+                            }
+                        }
+
+
+
+                    }
+            );
+        }
+        var strings = ['кришна', 'кришна', 'харе', 'харе', 'харе', 'харе', 'кришна', 'кришна', '8-()' ];
+
+        console.log( uniqueArr(strings) ); // кришна, харе, 8-()
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getWeekDay(date) {
+            var arr = ['пн','вт','ср','чт','пт','сб','вс'];
+            return arr[date.getDay()-1];
+        }
+
+        var date = new Date(2012,0,3); // 3 января 2012
+        console.log( getWeekDay(date) ); // Должно вывести 'вт'
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function anClean(arr) {
+            var resArr;
+            var newArr=[];
+            var value='';
+
+            for(var i=0;i<arr.length;i++) {
+                resArr=arr[i].split('');
+                resArr.sort(function(a,b) {
+                    if(a>b) {
+                        return 1;
+                    }
+                    if(a<b) {
+                        return -1;
+                    }
+                    return 0;
+                });
+                newArr[i] = resArr.join('').toLowerCase();
+            }
+            resArr=[];
+            for(i=0;i<newArr.length;i++) {
+
+                if(i==0) {
+                    value+=newArr[i];
+                    resArr[i]=arr[i];
+                }else {
+                     if(value.lastIndexOf(newArr[i])<0) {
+                         value += newArr[i];
+                         resArr[i] = arr[i];
+                     }
+                }
+
+            }
+
+        return resArr;
+        }
+
+
+
+
+        var arr = ['воз', 'киборг', 'корсет', 'ЗОВ', 'гробик', 'костер', 'сектор'];
+
+        console.log( anClean(arr) ); // 'воз,киборг,корсет' или 'ЗОВ,гробик,сектор'
+    </script>
+</body>
+</html>

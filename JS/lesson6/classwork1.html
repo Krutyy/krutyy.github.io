@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function addClass(obj,cls) {
+            var str = obj.className;
+            if(str.split(' ').indexOf(cls)<0) {
+                str+=' '+cls;
+                obj.className=str;
+            }
+        }
+
+        var obj = {
+            className: 'open menu'
+        };
+        addClass(obj, 'new'); // obj.className='open menu new'
+        addClass(obj, 'open'); // без изменений
+        addClass(obj, 'me'); // obj.className='open menu new me'
+        console.log( obj.className ); // "open menu new me"
+    </script>
+</body>
+</html>

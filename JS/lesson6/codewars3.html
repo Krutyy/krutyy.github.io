@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function getVillainName(birthday){
+            var result = '';
+            var char=0;
+            var firstName = {
+                January : "The Evil",
+                February : "The Vile",
+                March : "The Cruel",
+                April : "The Trashy",
+                May : "The Despicable",
+                June : "The Embarrassing",
+                July : "The Disreputable",
+                August : "The Atrocious",
+                September : "The Twirling",
+                October : "The Orange",
+                November : "The Terrifying",
+                December : "The Awkward"
+            };
+            var lastName=["Mustache","Pickle","Hood Ornament","Raisin",
+                "Recycling Bin","Potato","Tomato","House Cat","Teaspoon","Laundry Basket"];
+
+
+            var options = {
+                month: 'long',
+            };
+            for(var item in firstName) {
+                if(item==birthday.toLocaleString("en-US", options)) {
+                    result+=firstName[item];
+                }
+            }
+
+            if(birthday.getDate().toString().length==2) {
+                char=  birthday.getDate().toString().charAt(1);
+            }else {
+                char = birthday.getDate().toString();
+            }
+
+            for(item=0;item<lastName.length;item++) {
+                if(char==item) {
+                    result=result+' '+lastName[item];
+                }
+            }
+            return result;
+
+
+
+        }
+        var date = new Date(2012,4,3);
+        console.log(getVillainName(date));
+    </script>
+</body>
+</html>
