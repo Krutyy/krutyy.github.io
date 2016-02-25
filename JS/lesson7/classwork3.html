@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function identityf(a) {
+            return function() {
+                return a;
+            }
+        }
+
+        var idf = identityf(3);
+        console.log(idf()); // 3
+    </script>
+</body>
+</html>
