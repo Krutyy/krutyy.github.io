@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[7,10,25,4,33,2];
+    var resArr=[];
+    var counter=0;
+    for(var i=0;i<arr.length;i++) {
+        if(arr[i]%2==0) {
+           resArr.push(arr[i]);
+            delete arr[i];
+        }
+    }
+    resArr.sort(function(a,b){return a-b;});
+    for(i=0;i<arr.length;i++) {
+        if(arr[i] === undefined) {
+            while(counter<resArr.length) {
+                arr[i]=resArr[counter];
+                counter++;
+                break;
+            }
+
+        }
+    }
+
+
+    console.log(arr);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    'use strict';
+    function User(fullName) {
+        this.fullName = fullName;
+    }
+    var alex = new User('Александр Пушкин');
+
+    var getCom =function() {
+
+        return this.fullName.split(' ')[0]};
+    var setCom1 = function(value) { var arr = this.fullName.split(' ');
+                                    arr.pop();arr.push(value); this.fullName= arr.join(' ')};
+
+    var getCom1 =function() {
+
+        return this.fullName.split(' ')[1]};
+    var setCom = function(value) { var arr = this.fullName.split(' ');
+        arr.shift();arr.unshift(value); this.fullName= arr.join(' ')};
+
+    Object.defineProperties(alex,{
+        'firstName':{get:getCom,set:setCom},
+        'lastName':{get:getCom1,set:setCom1} });
+   alex.lastName='Толстой';
+    console.log(alex.fullName);
+</script
+</body>
+</htm
