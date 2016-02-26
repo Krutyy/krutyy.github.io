@@ -7,16 +7,19 @@
 <body>
     <script>
         function createFunctions(n) {
-            var callbacks = [];
-
-            for (var i=0; i<n; i++) {
-
-                callbacks.push(function a() {
-
-                    return a.a;
-                });
-                callbacks[i].a = i;
-            }
+  var callbacks = [];
+  
+  for (var i=0; i<n; i++) {
+  
+    callbacks.push(function a() {
+      
+      return a.a;
+    });
+    callbacks[i].a = i;
+  }
+  
+  return callbacks;
+}
     </script>
 </body>
 </html>
