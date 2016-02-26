@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function work(a, b) {
+        alert( a + b ); // work - произвольная функция
+    }
+
+    function makeLogging(f,log) {
+
+        return function() {
+            var arr = [].slice.call(arguments);
+            for(var i=0;i<arr.length;i++) {
+                log.push(arr[i]);
+            }
+            return f.apply(this,arguments);
+        }
+    }
+
+    var log=[];
+
+    work=makeLogging(work,log);
+
+    work(1,2); // 1, добавлено в log
+    work(4,5); // 5, добавлено в log
+
+
+
+</script>
+</body>
+</html>

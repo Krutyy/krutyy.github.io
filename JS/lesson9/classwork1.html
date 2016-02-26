@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f(a) {
+        return a*a;
+    }
+
+    function makeLogging(f,log) {
+
+        return function(a) {
+            log.push(a);
+            return f.apply(this,arguments);
+        }
+    }
+
+    var log=[];
+
+    f=makeLogging(f,log);
+
+    f(3);
+    f(5);
+
+    console.log(log);
+</script>
+</body>
+</html>

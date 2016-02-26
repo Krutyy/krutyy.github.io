@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f(x) {
+        return Math.random() * x; // random для удобства тестирования
+    }
+
+    function makeCaching(f) {
+        var result;
+        var lastCall;
+        var currentCall;
+        return function() {
+            currentCall=arguments[0];
+            if(!lastCall) {
+                lastCall=currentCall;
+                result = f.apply(this, arguments);
+                return result;
+            }else if(lastCall!=currentCall){
+                lastCall=currentCall;
+                result = f.apply(this, arguments);
+                return result;
+            }else {
+                return result;
+            }
+
+
+
+        }
+    }
+
+    f = makeCaching(f);
+
+    var a, b;
+
+    a = f(1);
+    b = f(1);
+    alert( a == b ); // true (значение закешировано)
+
+    b = f(2);
+    alert( a == b ); // false, другой аргумент => другое значение
+</script>
+</body>
+</html>
