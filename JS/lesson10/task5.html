@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function findLongWordToStr(str) {
+        var arr = str.split(' ');
+        var num;
+        for(var i=0;i<arr.length;i++) {
+            if(!num) {
+                num = arr[i].length;
+            }else {
+                if(num<arr[i].length) {
+                    num = arr[i].length;
+                }
+            }
+        }
+        for(i=0;i<arr.length;i++) {
+            if(arr[i].length==num) {
+                return arr[i];
+            }
+        }
+    }
+
+    console.log(findLongWordToStr('Web Development Tutorial'));
+</script>
+</body>
+</html>

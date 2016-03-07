@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function pattern(n){
+        var output="";
+        var strNum='';
+        var arrSpaces=[];
+        for(var i=1;strNum.length!=n;i++){
+            if(i==10) {
+                i=0;
+            }
+            strNum+=i;
+        }
+        for(i=0;i<n;i++){
+            for(var j=0;j<n-1;j++) {
+                arrSpaces.push(' ');
+            }
+            if(i!=n-1) {
+            arrSpaces.push('\n');
+            }
+        }
+
+        for(i=n-1;i<arrSpaces.length-1;i+=n) {
+            arrSpaces.splice(i,0,strNum);
+        }
+
+        output=arrSpaces.join('');
+
+        return output;
+    }
+
+    console.log(pattern(3));
+</script>
+</body>
+</html>

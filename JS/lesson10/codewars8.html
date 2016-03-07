@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Calculator = {
+        average: function() {
+            if(arguments.length==0) {
+                return 0;
+            }else {
+               return ([].reduce.apply(arguments,[function(sum,current){return sum+current;},0]))/arguments.length;
+            }
+
+        }
+    };
+    console.log(Calculator.average(3,4,5));
+
+</script>
+</body>
+</html>

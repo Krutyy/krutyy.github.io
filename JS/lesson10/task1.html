@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        person1Age: 20,
+        person1Name: 'Ivanov',
+        person2Age: 30,
+        person2Name: 'Petrov',
+        person3Age: 40,
+        person3Name: 'Sidorov'
+    };
+    obj.extractNumber = function() {
+        var ages=[];
+        for(var i in this) {
+            if(typeof(this[i])=='number') {
+                ages.push(this[i])
+            }
+        }
+        return ages;
+    };
+    obj.extractString = function() {
+        var names=[];
+        for(var i in this) {
+            if(typeof(this[i])=='string') {
+                names.push(this[i])
+            }
+        }
+        return names;
+    };
+
+    console.log(obj.extractNumber());
+    console.log(obj.extractString());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var typer = (function() {
+
+        return {
+            isNumber: function(data) {
+                if((typeof data == 'number'||data instanceof Number)&&!isNaN(data)) {
+                    return true;
+                }else return false;
+            },
+            isString: function(data) {
+                if(typeof data == 'string'||data instanceof String) {
+                    return true;
+                }else return false;
+            },
+            isArray: function(data) {
+                if(data instanceof Array) {
+                    return true;
+                }else return false;
+            },
+            isFunction: function(data) {
+                if(typeof data == 'function') {
+                    return true;
+                }else return false;
+            },
+            isDate: function(data) {
+                if(data instanceof Date) {
+                    return true;
+                }else return false;
+            },
+            isRegExp: function(data) {
+                if(data instanceof RegExp) {
+                    return true;
+                }else return false;
+            },
+            isBoolean: function(data) {
+                if(typeof data == 'boolean'||data instanceof Boolean) {
+                    return true;
+                }else return false;
+            },
+            isError: function(data) {
+                if(data instanceof Error) {
+                    return true;
+                }else return false;
+            },
+            isNull: function(data) {
+                if (!(data>0)&&!(data<0)&&(data>=0)&&data!=0) {
+                    return true;
+                }else return false;
+            },
+            isUndefined: function(data) {
+                if(typeof data == 'undefined') {
+                    return true;
+                }else return false;
+            }
+        };
+    }(null));
+    console.log(typer.isNull(null));
+</script>
+</body>
+</html>
