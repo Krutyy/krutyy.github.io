@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f (x) {
+        console.log(x);
+    }
+
+    function debounce(func,time) {
+        var count=0;
+        var flag=false;
+        return function() {
+
+            if(count==0) {
+                func.apply(this, arguments);
+                setTimeout(function(){flag=true},time);
+            }else if(flag) {
+                func.apply(this, arguments);
+                flag=false;
+            }else {
+                console.log("Игнор");
+            }
+            count++;
+        }
+    }
+
+    var func1=debounce(f,1000);
+
+    func1(1);
+    func1(2);
+    setTimeout(function() {func1(3)},100);
+    setTimeout(function() {func1(4)},1100);
+    setTimeout(function() {func1(5)},1500);
+
+
+</script>
+</body>
+</html>

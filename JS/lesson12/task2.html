@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function printNumbersInterval() {
+        var i=0;
+        var timer=setInterval(function(){
+                if(i<=20) {
+                    console.log(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+        },100);
+    }
+
+
+    printNumbersInterval();
+
+
+
+
+
+</script>
+</body>
+</html>

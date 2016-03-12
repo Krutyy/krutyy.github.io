@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Machine(power) {
+        this._power = power;
+        this._enabled = false;
+
+        this.enable = function() {
+
+            this._enabled = true;
+        };
+
+        this.disable = function() {
+            this._enabled = false;
+
+        };
+
+    }
+    function Fridge() {
+        Machine.apply(this,arguments);
+        var food=[];
+
+        var parentDisable=this.disable;
+
+        this.disable=function() {
+            if(food.length==0) parentDisable.apply(this);
+            else throw Error('В холодильнике есть еда');
+        };
+
+        this.addFood=function() {
+            if(!this._enabled) {
+                throw Error('Холодильник выключен!!!');
+            }
+            if(food.length+arguments.length<=this._power/100) {
+                var resArg = [].slice.apply(arguments);
+                food = food.concat(resArg);
+            }else throw Error('Слишком много еды!!!');
+        };
+
+        this.getFood=function() {
+            var resFood = food.slice();
+            return resFood;
+        };
+
+        this.removeFood=function(item) {
+            if(food.indexOf(item)>0) food.splice(food.indexOf(item),1);
+        };
+
+        this.filterFood=function(func) {
+            var sortFood=[];
+            for(var i=0;i<food.length;i++) {
+                if(func.call(this,food[i])) {
+                    sortFood.push(food[i]);
+                }
+            }
+            return sortFood;
+        };
+
+    }
+
+    var fridge = new Fridge(500);
+    fridge.enable();
+
+    fridge.disable(); // ошибка, в холодильнике есть еда
+</script>
+</body>
+</html>

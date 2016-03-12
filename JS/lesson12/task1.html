@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function f (x) {
+        console.log(x);
+    }
+
+    function throttle(func, ms) {
+
+        var isThrottled = false,
+                savedArgs,
+                savedThis;
+
+        function wrapper() {
+
+            if (isThrottled) { // (2)
+                savedArgs = arguments;
+                savedThis = this;
+                return;
+            }
+
+            func.apply(this, arguments); // (1)
+
+            isThrottled = true;
+
+            setTimeout(function() {
+                isThrottled = false; // (3)
+                if (savedArgs) {
+                    wrapper.apply(savedThis, savedArgs);
+                    savedArgs = savedThis = null;
+                }
+            }, ms);
+        }
+
+        return wrapper;
+    }
+    var func1=throttle(f,1000);
+
+    func1(1);
+    func1(2);
+    setTimeout(function() {func1(3)},100);
+    setTimeout(function() {func1(4)},1100);
+    setTimeout(function() {func1(5)},1500);
+</script>
+</body>
+</html>
